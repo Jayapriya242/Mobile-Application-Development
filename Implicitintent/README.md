@@ -11,18 +11,104 @@ Latest Version Android Studio
 
 ## ALGORITHM:
 
+Step 1: Open Android Stdio and then click on File -> New -> New project.
+
+Step 2: Then type the Application name as implicit inetent and click Next.
+
+Step 3: Then select the Minimum SDK as shown below and click Next.
+
+Step 4: Then select the Empty Activity and click Next. Finally click Finish.
+
+Step 5: Design layout in activity_main.xml.
+
+Step 6: Display message give in MainActivity file.
+
+Step 7: Save and run the application.
+
 
 
 ## PROGRAM:
 ```
-/*
-Program to print the text “Implicitintent”.
-Developed by:
-Registeration Number :
-*/
+Activity_main.xml:
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+xmlns:app="http://schemas.android.com/apk/res-auto"
+
+xmlns:tools="http://schemas.android.com/tools"
+
+android:layout_width="match_parent"
+
+android:layout_height="match_parent"
+
+tools:context=".MainActivity">
+
+<EditText
+    android:id="@+id/urlEditText"
+    android:layout_width="292dp"
+    android:layout_height="67dp"
+    android:layout_marginStart="56dp"
+    android:layout_marginTop="108dp"
+    android:hint="Enter URL"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<Button
+    android:id="@+id/navigateButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:text="Navigate"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/urlEditText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+MainActivity.java:
+package com.example.myapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+
+import android.net.Uri;
+
+import android.os.Bundle;
+
+import android.view.View;
+
+import android.widget.Button;
+
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity { EditText editText; Button button;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    button = findViewById(R.id.navigateButton);
+    editText = (EditText) findViewById(R.id.urlEditText);
+    button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            String url=editText.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        }
+    });
+}
+}
 ```
+Developed by:T.Jayapriya
+Register Number:212221220022
 
 ## OUTPUT
+![3 1](https://github.com/Jayapriya242/Mobile-Application-Development/assets/114279259/3a84c12b-a021-4bb0-add2-03e18ff34c72)
+![3 2](https://github.com/Jayapriya242/Mobile-Application-Development/assets/114279259/78aff04e-c7bc-4858-b7c5-c4233d02b59a)
+![3 3](https://github.com/Jayapriya242/Mobile-Application-Development/assets/114279259/c063c9cf-cd37-4cd3-b4d5-a9808bd005be)
+![3 4](https://github.com/Jayapriya242/Mobile-Application-Development/assets/114279259/a58ff2a1-c03f-46da-bd53-7eaa1c3df032)
+
 
 
 
